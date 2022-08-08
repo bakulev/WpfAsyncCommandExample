@@ -13,5 +13,18 @@ namespace WpfNetFramework
     /// </summary>
     public partial class App : Application
     {
+        Views.MainWindow _mainView;
+
+        override protected void OnStartup(StartupEventArgs e)
+        {
+            _mainView = new Views.MainWindow();
+            _mainView.DataContext = this;
+            MainWindow = _mainView;
+            _mainView.Show();
+        }
+        override protected void OnExit(ExitEventArgs e)
+        {
+
+        }
     }
 }
