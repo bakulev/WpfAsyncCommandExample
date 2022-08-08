@@ -4,9 +4,40 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfNetFramework"
+        xmlns:viewModels="clr-namespace:WpfNetFramework.ViewModels"
+        xmlns:converters="clr-namespace:WpfNetFramework.Converters"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <converters:TaskResultConverter x:Key="TaskResultConverter"/>
+        <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+    </Window.Resources>
+
+    <StackPanel xml:space="default">
+        <TextBlock>
+            <Run Text="Task status:"/>
+            <Run Text="{Binding DownloadTextCommand.ExecutionTask.Status, Mode=OneWay}"/>
+            <LineBreak/>
+            <Run Text="Result:"/>
+            <Run Text="{Binding DownloadTextCommand.ExecutionTask, Converter={StaticResource TaskResultConverter}, Mode=OneWay}"/>
+        </TextBlock>
+
+        <Button
+            Content="Click me!"
+            Command="{Binding DownloadTextCommand}"
+            IsEnabled="{Binding DownloadTextCommand.IsRunning, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}"/>
+        <ProgressBar
+            HorizontalAlignment="Left" Height="20" Width="800"
+            Minimum="0" Maximum="100" Value="{Binding ProgressValue, Mode=OneWay}"/>
+        <!--IsIndeterminate="{Binding DownloadTextCommand.IsRunning, Mode=OneWay}"/-->
+        <Button
+            Content="Cancel"
+            Command="{Binding DownloadTextCancelCommand}"
+            IsEnabled="{Binding DownloadTextCommand.CanBeCanceled, Mode=OneWay}"/>
+    </StackPanel>
 </Window>
