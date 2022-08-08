@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2A6B5E5-D457-4EDF-94C7-DFC54DE70109}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommunityToolkit</RootNamespace>
+    <AssemblyName>CommunityToolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Extensions\TaskExtensions.cs" />
+    <Compile Include="Mvvm\ComponentModel\Attributes\INotifyPropertyChangedAttribute.cs" />
+    <Compile Include="Mvvm\ComponentModel\Attributes\NotifyCanExecuteChangedForAttribute.cs" />
+    <Compile Include="Mvvm\ComponentModel\Attributes\NotifyDataErrorInfoAttribute.cs" />
+    <Compile Include="Mvvm\ComponentModel\Attributes\NotifyPropertyChangedForAttribute.cs" />
+    <Compile Include="Mvvm\ComponentModel\Attributes\NotifyPropertyChangedRecipientsAttribute.cs" />
+    <Compile Include="Mvvm\ComponentModel\Attributes\ObservableObjectAttribute.cs" />
+    <Compile Include="Mvvm\ComponentModel\Attributes\ObservablePropertyAttribute.cs" />
+    <Compile Include="Mvvm\ComponentModel\Attributes\ObservableRecipientAttribute.cs" />
+    <Compile Include="Mvvm\ComponentModel\ObservableObject.cs" />
+    <Compile Include="Mvvm\ComponentModel\ObservableValidator.cs" />
+    <Compile Include="Mvvm\ComponentModel\__Internals\__ObservableValidatorHelper.cs" />
+    <Compile Include="Mvvm\ComponentModel\__Internals\__TaskExtensions.cs" />
+    <Compile Include="Mvvm\Input\AsyncRelayCommand.cs" />
+    <Compile Include="Mvvm\Input\AsyncRelayCommandOptions.cs" />
+    <Compile Include="Mvvm\Input\AsyncRelayCommand{T}.cs" />
+    <Compile Include="Mvvm\Input\Attributes\RelayCommandAttribute.cs" />
+    <Compile Include="Mvvm\Input\IAsyncRelayCommandExtensions.cs" />
+    <Compile Include="Mvvm\Input\Interfaces\IAsyncRelayCommand.cs" />
+    <Compile Include="Mvvm\Input\Interfaces\IAsyncRelayCommand{T}.cs" />
+    <Compile Include="Mvvm\Input\Interfaces\IRelayCommand.cs" />
+    <Compile Include="Mvvm\Input\Interfaces\IRelayCommand{T}.cs" />
+    <Compile Include="Mvvm\Input\Internals\CancelCommand.cs" />
+    <Compile Include="Mvvm\Input\Internals\DisabledCommand.cs" />
+    <Compile Include="Mvvm\Input\Internals\ICancellationAwareCommand.cs" />
+    <Compile Include="Mvvm\Input\RelayCommand.cs" />
+    <Compile Include="Mvvm\Input\RelayCommand{T}.cs" />
+    <Compile Include="Mvvm\Properties\Configuration.cs" />
+    <Compile Include="Mvvm\Properties\Polyfills\ArgumentNullException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

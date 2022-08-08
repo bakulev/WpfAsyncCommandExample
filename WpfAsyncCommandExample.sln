@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfNetFramework", "WpfNetFramework\WpfNetFramework.csproj", "{F447A60F-6922-4FFC-A9BE-CD8969F244DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityToolkit", "CommunityToolkit\CommunityToolkit.csproj", "{F2A6B5E5-D457-4EDF-94C7-DFC54DE70109}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F447A60F-6922-4FFC-A9BE-CD8969F244DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F447A60F-6922-4FFC-A9BE-CD8969F244DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F447A60F-6922-4FFC-A9BE-CD8969F244DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2A6B5E5-D457-4EDF-94C7-DFC54DE70109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A6B5E5-D457-4EDF-94C7-DFC54DE70109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2A6B5E5-D457-4EDF-94C7-DFC54DE70109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2A6B5E5-D457-4EDF-94C7-DFC54DE70109}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
